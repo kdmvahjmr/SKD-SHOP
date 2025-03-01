@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Twenty4Hours</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to Twenty4Hours</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me"> <label for="remember-me">Remember Me</label>
+            </div>
+            <button type="submit">Login</button>
+            <p class="register-link">Don't have an account? <a id="sigin" href="signup.html">Sign up</a></p>
+            <a id="guest" href="Main.html">login as guest</a>
+        </form>
+
+        <!-- Guest Login Button -->
+      
+    </div>
+
+</body>
+</html>

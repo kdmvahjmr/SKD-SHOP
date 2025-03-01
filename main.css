@@ -1,0 +1,288 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for the header */
+}
+
+/* Logo */
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* Responsive H1 */
+#h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    flex-grow: 1;
+    color: white;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Navigation Menu */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: -250px;  /* Hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #222;  /* Darker background */
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    border-radius: 0 10px 10px 0; /* Rounded corners on the right side */
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for navbar */
+}
+
+#navbar.open {
+    left: 0; /* Show the navbar when the "open" class is added */
+}
+
+/* Navbar Shadow Effect */
+body.menu-open {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken the background when menu opens */
+}
+
+/* Navbar Links */
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar li {
+    margin: 20px 0;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 15px 20px; /* Add some padding around the text */
+    display: block;
+    font-weight: 600; /* Make the text a bit bolder */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    border: 2px solid transparent; /* Default border to make space */
+    border-radius: 5px; /* Rounded corners for each item */
+}
+
+/* White border effect on hover */
+#navbar a:hover {
+    color: #1db954; /* Change text color to a modern green on hover */
+    background-color: #444; /* Darken background on hover */
+    border-color: white; /* White border when hovering */
+}
+
+/* Navbar Item Hover Effect */
+#navbar li:hover {
+    background-color: #444; /* Darken background on hover */
+}
+
+/* Shop Section */
+#shop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px; /* Rounded corners for product boxes */
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+.product h3 {
+    margin: 10px 0;
+}
+
+.product p {
+    color: #888;
+    margin: 5px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    #h1 {
+        font-size: 2rem;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    #navbar {
+        width: 200px; /* Slightly smaller navbar */
+    }
+}
+
+@media (max-width: 480px) {
+    #h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    #navbar {
+        width: 180px; /* Even smaller navbar for mobile */
+    }
+}
+/* Slideshow Container */
+#slideshow {
+    position: relative;
+    width: 80%; /* Reduce the width of the slideshow */
+    max-width: 400px; /* Set a max width to make it not too large */
+    margin: 10px auto; /* Center it horizontally */
+    overflow: hidden; /* Hide anything outside the container */
+}
+
+.slideshow-container {
+    display: flex; /* Align slides in a row */
+    transition: transform 1s ease; /* Smooth sliding transition */
+}
+
+.slide {
+    min-width: 100%; /* Each slide takes 100% of the container width */
+    transition: transform 1s ease; /* Smooth transition for each slide */
+}
+
+.slide img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container properly */
+    border-radius: 10px;
+}
+
+#cart-icon {
+    
+    margin-top: 20px; /* Space under header */
+}
+
+#cart-icon button {
+    background: none;
+    border: none;
+    position: relative;
+    padding: 0;
+}
+
+#cart-icon img {
+    width: 30px;
+    height: auto;
+}
+
+/* Make the cart count red */
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;  /* Set background color to red */
+    color: white;           /* Text color for the count */
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+    display: none; /* Initially hide the count */
+}
+
+/* Show the count when cart has items */
+#cart-count.visible {
+    display: inline-block;
+}
+/* Footer styling */
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 16px;
+    color: #f7f7f7;
+    margin-bottom: 10px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Blue color on hover */
+}
+
+/* Change icon colors on hover */
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover i {
+    color: #007bff;
+}
+
